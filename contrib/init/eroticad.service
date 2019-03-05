@@ -1,0 +1,26 @@
+[Unit]
+Description=Erotica's distributed currency daemon
+After=network.target
+
+[Service]
+User=erotica
+Group=erotica
+
+Type=forking
+PIDFile=/var/lib/eroticad/eroticad.pid
+
+ExecStart=/usr/bin/eroticad -daemon -pid=/var/lib/eroticad/eroticad.pid \
+          -conf=/etc/erotica/erotica.conf -datadir=/var/lib/eroticad
+
+ExecStop=-/usr/bin/erotica-cli -conf=/etc/erotica/erotica.conf \
+         -datadir=/var/lib/eroticad stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

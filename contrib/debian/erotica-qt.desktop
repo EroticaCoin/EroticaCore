@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Erotica
+Comment=Erotica P2P Cryptocurrency
+Comment[fr]=Erotica, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Erotica, eşten eşe kriptografik sanal para birimi
+Exec=erotica-qt %u
+Terminal=false
+Type=Application
+Icon=erotica128
+MimeType=x-scheme-handler/erotica;
+Categories=Office;Finance;
